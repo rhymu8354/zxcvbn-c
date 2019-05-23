@@ -30,7 +30,7 @@ add_executable(dictgen dict-generate.cpp)
 add_custom_command(
     OUTPUT ${dict-src}
     DEPENDS dictgen
-    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/dictgen -o ${dict-src} ${Words}
+    COMMAND $<TARGET_FILE:dictgen> -o ${dict-src} ${Words}
 )
 
 add_library(${This} STATIC ${Sources} ${Headers})
